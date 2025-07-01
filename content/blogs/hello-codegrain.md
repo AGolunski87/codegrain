@@ -1,7 +1,11 @@
 # Hello from Codegrain
 
-Write your content here.
+We’re building our portfolio and sharing tech insights here.
 
-## Summary
+## What’s Coming
 
-A brief welcome and intro to our dev blog.
+- Flutter demos  
+- Dev workflows  
+- Design & architecture
+
+Stay tuned!

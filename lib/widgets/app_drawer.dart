@@ -17,7 +17,7 @@ class AppDrawer extends StatelessWidget {
           ),
           ListTile(
             title: Text('Tech Demos'),
-            onTap: () => Navigator.pushNamed(context, '/demos'),
+            onTap: () => Navigator.pushNamed(context, '/tech-demos'),
           ),
           ListTile(
             title: Text('Contact'),
