@@ -1,0 +1,26 @@
+name: codegrain_portfolio
+description: A personal and company portfolio + blog for Codegrain.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0' # ✅ Upgrade to 3.x SDK for latest Firebase versions
+
+dependencies:
+  flutter:
+    sdk: flutter
+  url_launcher: ^6.2.5
+  firebase_core: ^2.30.0
+  firebase_storage: ^11.6.6
+  cloud_firestore: ^4.17.0
+  flutter_markdown: ^0.6.14
+  js: ^0.6.7 # ✅ Required for JS interop
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true

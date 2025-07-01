@@ -1,0 +1,1 @@
+{"firestore":{"database":"(default)","location":"eur3","rules":"firestore.rules","indexes":"firestore.indexes.json"},"storage":{"rules":"storage.rules"},"flutter":{"platforms":{"dart":{"lib/firebase_options.dart":{"projectId":"codegrain","configurations":{"web":"1:879417827330:web:2298a8e64571a824b1071b"}}}}}}
