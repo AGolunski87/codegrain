@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import '../widgets/app_drawer.dart';
+import '../widgets/blog_card.dart'; // make sure this import path is correct
 
 class BlogPage extends StatelessWidget {
   final List<Map<String, String>> posts = [
     {
       'title': 'How I’m Transforming Codegrain',
-      'summary':
-          'A behind-the-scenes look at the process innovation and strategic shifts reshaping my solo consultancy.',
+      'summary': 'A behind-the-scenes look...',
+      'slug': 'transforming-codegrain',
     },
     {
       'title': 'Why Technical Product Managers Win',
-      'summary':
-          'Exploring the edge a technical background brings to digital product management roles.',
+      'summary': 'Exploring the edge...',
+      'slug': 'technical-pm-win',
     },
   ];
 
@@ -21,16 +22,16 @@ class BlogPage extends StatelessWidget {
       appBar: AppBar(title: Text('Blog')),
       drawer: AppDrawer(),
       body: ListView.builder(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.only(top: 12, bottom: 24),
         itemCount: posts.length,
-        itemBuilder: (context, index) => Card(
-          margin: EdgeInsets.symmetric(vertical: 10),
-          child: ListTile(
-            title: Text(posts[index]['title']!),
-            subtitle: Text(posts[index]['summary']!),
-            onTap: () {},
-          ),
-        ),
+        itemBuilder: (context, index) {
+          final post = posts[index];
+          return BlogCard(
+            title: post['title']!,
+            summary: post['summary'] ?? '',
+            slug: post['slug']!,
+          );
+        },
       ),
     );
   }

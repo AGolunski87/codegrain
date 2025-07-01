@@ -7,18 +7,18 @@ class BlogCard extends StatelessWidget {
   final String slug;
 
   const BlogCard({
-    Key? key,
+    super.key,
     required this.title,
     required this.slug,
     this.summary = '',
-  }) : super(key: key);
+  });
 
   void _openBlogUrl() async {
-    final Uri url = Uri.parse('https://codegrain.co.uk/blogs/$slug');
+    final Uri url = Uri.parse('https://codegrain.co.uk/$slug');
     if (await canLaunchUrl(url)) {
       await launchUrl(url, mode: LaunchMode.externalApplication);
     } else {
-      throw 'Could not launch $url';
+      debugPrint('❌ Could not launch $url');
     }
   }
 
@@ -28,17 +28,17 @@ class BlogCard extends StatelessWidget {
       onTap: _openBlogUrl,
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
         elevation: 4,
+        margin: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
         child: Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(title, style: Theme.of(context).textTheme.titleLarge),
+              Text(title, style: Theme.of(context).textTheme.headlineSmall),
               if (summary.isNotEmpty) ...[
                 const SizedBox(height: 8),
-                Text(summary, style: Theme.of(context).textTheme.bodyMedium),
+                Text(summary, style: Theme.of(context).textTheme.bodyLarge),
               ],
             ],
           ),
